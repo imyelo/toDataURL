@@ -33,6 +33,15 @@
       describe('use case', function () {
         var $img, img;
         var result = resultFile[isPhantomJS ? 'phantomjs' : 'chrome'];
+        var test = function (title, input, output) {
+          it(title, function () {
+            if (typeof output === 'string') {
+              expect(input()).to.be.equal(output);
+            } else {
+              expect(input()).to.be.match(output);
+            }
+          });
+        };
         before(function () {
           $img = $('<img src="./imgs/github.png" />').appendTo('body');
           img = $img.get(0);
@@ -42,38 +51,22 @@
         });
         describe('toDataURL method', function () {
           describe('toDataURL(elem, width, height)', function () {
-            it('origin work', function () {
-              expect(toDataURL(img, 27, 48)).to.be.equal(result.origin);
-            });
-            it('bigger work', function () {
-              expect(toDataURL(img, 54, 96)).to.be.equal(result.bigger);
-            });
-            it('smaller work', function () {
-              expect(toDataURL(img, 9, 16)).to.be.equal(result.smaller);
-            });
+            test('origin work', function () {return toDataURL(img, 27, 48);}, result.origin);
+            test('bigger work', function () {return toDataURL(img, 54, 96);}, result.bigger);
+            test('smaller work', function () {return toDataURL(img, 9, 16);}, result.smaller);
           });
           describe('toDataURL(elem)', function () {
-            it('work', function () {
-              expect(toDataURL(img)).to.be.equal(result.origin);
-            });
+            test('work', function () {return toDataURL(img);}, result.origin);
           });
         });
         describe('toDataURL plugin for jQuery', function () {
           describe('$.fn.toDataURL(width, height)', function () {
-            it('origin work', function () {
-              expect($img.toDataURL(27, 48)).to.be.equal(result.origin);
-            });
-            it('bigger work', function () {
-              expect(toDataURL(img, 54, 96)).to.be.equal(result.bigger);
-            });
-            it('smaller work', function () {
-              expect($img.toDataURL(9, 16)).to.be.equal(result.smaller);
-            });
+            test('origin work', function () {return $img.toDataURL(27, 48);}, result.origin);
+            test('bigger work', function () {return $img.toDataURL(54, 96);}, result.bigger);
+            test('smaller work', function () {return $img.toDataURL(9, 16);}, result.smaller);
           });
           describe('$.fn.toDataURL()', function () {
-            it('work', function () {
-              expect($img.toDataURL()).to.be.equal(result.origin);
-            });
+            test('work', function () {return $img.toDataURL();}, result.origin);
           });
         });
       });
