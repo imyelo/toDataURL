@@ -1,0 +1,18 @@
+{
+  "name": "to-data-url",
+  "repo": "imyelo/to-data-url",
+  "description": "url or <img> element to DataURL",
+  "version": "1.0.1",
+  "keywords": [
+    "data-url",
+    "dataURL",
+    "base64",
+    "image",
+    "img"
+  ],
+  "scripts": [
+    "src/index.js"
+  ],
+  "main": "src/index.js",
+  "license": "MIT"
+}
