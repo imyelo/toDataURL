@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+    <script src="../libs/toDataURL.js"></script>
+  </head>
+
+  <body>
+
+    <img id="img">
+
+    <p id="result"></p>
+
+    <script>
+      $(document).ready(function () {
+        var LARGE_PICS = ['http://inapcache.boston.com/universal/site_graphics/blogs/bigpicture/092914_hongkong/bp1.jpg'];
+        // setInterval(function () {
+        //   var data = $('#img').toDataURL(100,100);
+        //   console.log(data);
+        //   $('#result').text(data);
+        // }, 1000);
+        setTimeout(function () {
+          $('#img').attr('src', LARGE_PICS);
+        }, 2000);
+
+      });
+    </script>
+  </body>
+</html>
