@@ -11,6 +11,10 @@
         <script src="./asset/sinon-1.7.1.js"></script>
         <script src="./setup.js"></script>
         <script src="./asset/jquery-1.9.1.min.js"></script>
-        <script type="text/javascript" src="./seajs/sea.js" data-main="./app/app" data-config="./sea.config"></script>
+        <script src="./seajs/sea.js"></script>
+        <script src="./sea.config.js"></script>
+        <script>
+            seajs.use('./app/app');
+        </script>
     </body>
 </html>
