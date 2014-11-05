@@ -1,15 +1,40 @@
 {
-  "name": "toDataURL",
-  "version": "0.1.0",
-  "author": "yelo",
+  "name": "to-data-url",
+  "version": "1.0.0",
+  "author": {
+    "name": "yelo",
+    "email": "zhihuzeye@gmail.com"
+  },
+  "homepage": "https://github.com/imyelo/toDataURL",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/imyelo/toDataURL.git"
+  },
+  "bugs": {
+    "url": "https://github.com/imyelo/toDataURL/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/imyelo/toDataURL/blob/master/LICENSE"
+    }
+  ],
+  "keywords": [
+    "data-url",
+    "dataURL",
+    "base64",
+    "image",
+    "img"
+  ],
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-mocha-phantomjs": "~0.3.2"
-  },
-  "scripts": {
-    "test": "grunt test"
   }
 }
