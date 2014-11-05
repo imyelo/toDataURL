@@ -22,6 +22,17 @@ module.exports = function (grunt) {
         ]
       }
     },
+    duojs: {
+      main: {
+        options: {
+          root: './src',
+          entry: './index.js',
+          standalone: 'toDataURL',
+          buildTo: '../dest',
+          installTo: '../components'
+        }
+      }
+    },
     watch: {
       libs: {
         files: 'libs/**/**',
@@ -34,12 +45,14 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-duojs');
   grunt.loadNpmTasks('grunt-mocha-phantomjs');
   grunt.loadNpmTasks("grunt-contrib-clean");
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
+  grunt.registerTask('compile', ['duojs']);
   grunt.registerTask('_dev', ['test']);
-  grunt.registerTask('test', ['copy:test', 'mocha_phantomjs:cmd', 'clean:test']);
+  grunt.registerTask('test', ['compile', 'copy:test', 'mocha_phantomjs:cmd', 'clean:test']);
   grunt.registerTask('dev', ['watch']);
 };

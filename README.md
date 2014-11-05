@@ -81,6 +81,9 @@ define(['toDataURL'], function (toDataURL) {
     - support ``toDataURL(elem, {[callback], [width], [height], [purify]})``
     - support ``toDataURL(src, {callback, [width], [height], [purify]})``
     - deprecate ``toDataURL(elem, width, height)``
+- 1.0.1
+    - friendly expection message
+    - add duojs compiler
 
 ## License
 the MIT License
