@@ -14,7 +14,7 @@ npm install --save to-data-url
 
 
 # Usage
-```javascrfpt
+```javascript
 define(['toDataURL'], function (toDataURL) {
     var element = document.getElementByTagName('img')[0];
     var src = 'https://avatars0.githubusercontent.com/u/7076521?v=2&s=84';
